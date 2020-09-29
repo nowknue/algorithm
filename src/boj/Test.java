@@ -1,4 +1,4 @@
-package algorithm;
+package boj;
 
 public class Test {
 
