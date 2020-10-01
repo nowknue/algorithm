@@ -2,7 +2,7 @@ package boj;
 
 import java.util.Scanner;
 
-public class boj11724_dfs {   
+public class BOJ11724_dfs {   
    static int[][] map;
    static boolean[] check;
    static int N, M;

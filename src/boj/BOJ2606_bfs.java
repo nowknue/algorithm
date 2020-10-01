@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class boj2606_bfs {
+public class BOJ2606_bfs {
    
    static int N, connect, result;
     

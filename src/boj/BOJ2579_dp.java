@@ -3,7 +3,7 @@ package boj;
 import java.util.Scanner;
 
 // 계단오르기 연속세칸안됨
-public class boj2579_dp {
+public class BOJ2579_dp {
    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

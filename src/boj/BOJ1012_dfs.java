@@ -2,7 +2,7 @@ package boj;
 
 import java.util.*;
 
-public class boj1012_dfs {   
+public class BOJ1012_dfs {   
    static int[][] map;
    static boolean[][] check;
    static int[] movex = {-1, 0, 1, 0};
