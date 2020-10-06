@@ -39,6 +39,8 @@ public class BOJ2573_dfs {
 
 			if (count == 1) {
 				visitedMelt = new boolean[N][M];
+				tmp = new int[N][M];
+				
 				for (int i = 0; i < N; i++) {
 					for (int j = 0; j < M; j++) {
 						if (!visitedMelt[i][j] && map[i][j] != 0) {
@@ -46,7 +48,7 @@ public class BOJ2573_dfs {
 						}
 					}
 				}
-
+				
 				for (int i = 0; i < N; i++) {
 					for (int j = 0; j < M; j++) {
 						map[i][j] = map[i][j] - tmp[i][j];
@@ -55,7 +57,7 @@ public class BOJ2573_dfs {
 						}
 					}
 				}
-
+				
 				year++;
 			} else if (count == 0) {
 				System.out.println(0);
