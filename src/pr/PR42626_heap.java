@@ -10,7 +10,7 @@ public class PR42626_heap {
      
    public static int solution(int[] scoville, int K) {
        int answer = 0;
-       PriorityQueue<Integer> heap = new PriorityQueue();
+       PriorityQueue<Integer> heap = new PriorityQueue<>();
 
        for (int aScoville : scoville) {
            heap.offer(aScoville);
