@@ -19,6 +19,10 @@ public class Car {
 	@Override
 	public boolean equals(Object obj) {
 		
+		if (obj instanceof Car) {
+			return false;
+		}
+		
 		return super.equals(obj);
 	}
 }
