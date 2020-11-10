@@ -20,7 +20,11 @@ public class Car {
 	public boolean equals(Object obj) {
 		
 		if (obj instanceof Car) {
-			return false;
+			if (((Car) obj).getName().equals(this.getName()) && ((Car)obj).getPrice() == this.getPrice()) {
+				return true;
+			} else {
+				return false;
+			}
 		}
 		
 		return super.equals(obj);
