@@ -1,7 +1,7 @@
 package ct;
 
 public class AUTO02 {
-	public static int solution(int[] dollars) {
+	public static int solution(int[] dollars) { // why static???
 		int money = 1000;
 		int[] arr = dollars;
 		boolean hasDol = false;
