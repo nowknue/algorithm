@@ -2,6 +2,7 @@ package boj;
 
 import java.util.Scanner;
 
+// 소스가 약간 난잡한듯 해서 dx dy 쓰는식으로 수정해보
 class BOJ14503_imp {
 	static int N, M, r, c, d;
 	static int[][] arr;
