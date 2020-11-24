@@ -1,89 +1,150 @@
 package boj;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class BOJ14500_st {
-	static int MAX = Integer.MIN_VALUE;
-	static int[] moveX = { 0, 0, -1, 1 };
-	static int[] moveY = { -1, 1, 0, 0 };
+    static int N;
+    static int M;
+    static int R;
+    static int C;
+    static int[][] map;
+    static int max = 0;
+    static ArrayList<Pair> list1 = new ArrayList<>();
+    static ArrayList<Pair> list2 = new ArrayList<>();
+    static ArrayList<Pair> list3 = new ArrayList<>();
+    static ArrayList<Pair> list4 = new ArrayList<>();
+    static ArrayList<Pair> list5 = new ArrayList<>();
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		String[] split = br.readLine().split(" ");
-		int n = Integer.parseInt(split[0]);
-		int m = Integer.parseInt(split[1]);
-		int[][] arr = new int[n][m];
-		int[][] visit = new int[n][m];
-		for (int i = 0; i < arr.length; i++) {
-			String[] split1 = br.readLine().split(" ");
-			for (int j = 0; j < split1.length; j++) {
-				arr[i][j] = Integer.parseInt(split1[j]);
-			}
-		}
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = br.readLine().split(" ");
+        N = Integer.parseInt(input[0]);
+        M = Integer.parseInt(input[1]);
 
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < m; j++) {
-				dfs(i, j, 1, 0, arr, visit);
-			}
-		}
+        map = new int[N][M];
 
-		for (int i = 0; i < n - 2; i++) {
-			for (int j = 0; j < m - 1; j++) {
-				check1(i, j, arr);
-			}
-		}
+        list1.add(new Pair(0, 0));
+        list1.add(new Pair(0, 1));
+        list1.add(new Pair(0, 2));
+        list1.add(new Pair(0, 3));
+        list2.add(new Pair(0, 0));
+        list2.add(new Pair(0, 1));
+        list2.add(new Pair(1, 0));
+        list2.add(new Pair(1, 1));
+        list3.add(new Pair(0, 0));
+        list3.add(new Pair(1, 0));
+        list3.add(new Pair(2, 0));
+        list3.add(new Pair(2, 1));
+        list4.add(new Pair(0 ,0));
+        list4.add(new Pair(1 ,0));
+        list4.add(new Pair(1 ,1));
+        list4.add(new Pair(2 ,1));
+        list5.add(new Pair(0, 0));
+        list5.add(new Pair(0, 1));
+        list5.add(new Pair(0, 2));
+        list5.add(new Pair(1, 1));
 
-		for (int i = 0; i < n - 1; i++) {
-			for (int j = 0; j < m - 2; j++) {
-				check2(i, j, arr);
-			}
-		}
+        for(int i=0; i<N; i++) {
+            String[] str = br.readLine().split(" ");
+            for(int j=0; j<M; j++)
+                map[i][j] = Integer.parseInt(str[j]);
+        }
 
-		System.out.println(MAX);
-	}
+        R=1;
+        C=4;
+        for(int i=0; i<2; i++) {
+            attach(list1);
+            turnClock(list1);
+        }
 
-	private static void check1(int n, int m, int[][] arr) {
-		int sum1 = arr[n][m] + arr[n + 1][m] + arr[n + 2][m] + arr[n + 1][m + 1];
-		if (sum1 > MAX) {
-			MAX = sum1;
-		}
-		int sum2 = arr[n][m + 1] + arr[n + 1][m] + arr[n + 1][m + 1] + arr[n + 2][m + 1];
-		if (sum2 > MAX) {
-			MAX = sum2;
-		}
-	}
+        R=2;
+        C=2;
+        attach(list2);
 
-	private static void check2(int n, int m, int[][] arr) {
-		int sum1 = arr[n][m] + arr[n][m + 1] + arr[n][m + 2] + arr[n + 1][m + 1];
-		if (sum1 > MAX) {
-			MAX = sum1;
-		}
-		int sum2 = arr[n][m + 1] + arr[n + 1][m] + arr[n + 1][m + 1] + arr[n + 1][m + 2];
-		if (sum2 > MAX) {
-			MAX = sum2;
-		}
-	}
+        R=3;
+        C=2;
+        for(int i=0; i<4; i++) {
+            attach(list3);
+            turnClock(list3);
+        }
+        symmetry(list3);
+        for(int i=0; i<4; i++) {
+            attach(list3);
+            turnClock(list3);
+        }
 
-	private static void dfs(int n, int m, int depth, int value, int[][] arr, int[][] visit) {
-		if (n < 0 || n >= arr.length || m < 0 || m >= arr[0].length) {
-			return;
-		}
-		if (visit[n][m] == 1) {
-			return;
-		}
-		if (depth == 4) {
-			if (value + arr[n][m] > MAX) {
-				MAX = value + arr[n][m];
-			}
-			return;
-		}
+        R=3;
+        C=2;
+        for(int i=0; i<2; i++) {
+            attach(list4);
+            turnClock(list4);
+        }
+        symmetry(list4);
+        for(int i=0; i<2; i++) {
+            attach(list4);
+            turnClock(list4);
+        }
 
-		visit[n][m] = 1;
-		for (int i = 0; i < 4; i++) {
-			dfs(n + moveX[i], m + moveY[i], depth + 1, value + arr[n][m], arr, visit);
-		}
-		visit[n][m] = 0;
-	}
+        R=2;
+        C=3;
+        for(int i=0; i<4; i++) {
+            attach(list5);
+            turnClock(list5);
+        }
 
+        System.out.println(max);
+    }
+
+    static void attach(ArrayList<Pair> list) {
+
+        for (int i = 0; i < N - R + 1; i++) {
+            for (int j = 0; j < M - C + 1; j++) {
+                ArrayList<Pair> tempList = new ArrayList<>(list);
+                int sum = 0;
+
+                while (!tempList.isEmpty()) {
+                    Pair temp = tempList.remove(0);
+                    sum += map[i + temp.x][j + temp.y];
+                }
+                max = Math.max(max, sum);
+            }
+        }
+    }
+
+    static void turnClock(ArrayList<Pair> list) {
+        int t=R;
+        R = C;
+        C = t;
+        int leng = list.size();
+
+        for(int i=0; i<leng; i++) {
+            Pair temp = list.remove(0);
+            list.add(new Pair(temp.y, C-temp.x-1));
+        }
+    }
+
+    static void symmetry(ArrayList<Pair> list) {
+        int leng = list.size();
+
+        for(int i=0; i<leng; i++) {
+            Pair temp = list.remove(0);
+            if(temp.y==0)
+                list.add(new Pair(temp.x, 1));
+            if(temp.y==1)
+                list.add(new Pair(temp.x, 0));
+        }
+    }
+
+    static class Pair {
+        int x;
+        int y;
+
+        public Pair(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
 }
