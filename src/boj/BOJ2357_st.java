@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class BOJ2357_st {
-	
+
 	static long[] arr, tree;
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
