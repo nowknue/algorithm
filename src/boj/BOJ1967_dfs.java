@@ -3,7 +3,7 @@ package boj;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
-         
+
 public class BOJ1967_dfs {
 
 	private static class Node {
