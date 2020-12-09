@@ -3,6 +3,7 @@ package ct;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+//처음부터 문제 파악 잘하고 리스트로 했어야함.
 public class DN04 {
 	public static int[] solution(int[][] customer, int K) {
 		int[][] cust = customer;
