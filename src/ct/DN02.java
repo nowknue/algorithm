@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
-//map list 쓰는게 좀 비효율적인
+//map list 쓰는게 좀 비효율적인듯
 public class DN02 {
 	public static String[] solution(String[] orders) {
 		String[] ords = orders;

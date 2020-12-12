@@ -1,5 +1,6 @@
 package ct;
 
+// 처음 풀 때부터 특이케이스 잘 생각하기
 public class DN01 {
 	public static String solution(String[] strs) {
 		String[] arrStr = strs;
