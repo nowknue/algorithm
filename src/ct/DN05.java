@@ -1,5 +1,6 @@
 package ct;
 
+// 고급 SQL 공부 필요
 public class DN05 {
    
    public static void main(String args[]) {
