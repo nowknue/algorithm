@@ -2,6 +2,7 @@ package boj;
 
 import java.util.*;
 
+// 다시 정독해보기
 public class BOJ14499_st {
 	public static int[][] array; // 지도에 쓰여있는 수
 	public static int[] dice; // 주사위 (위, 뒤, 오른, 왼, 앞, 바닥) 순서
