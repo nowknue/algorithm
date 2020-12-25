@@ -6,6 +6,7 @@ import java.util.Scanner;
 class BOJ14503_imp {
 	static int N, M, r, c, d;
 	static int[][] arr;
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		N = sc.nextInt();
@@ -15,13 +16,13 @@ class BOJ14503_imp {
 		d = sc.nextInt();
 		arr = new int[N][M];
 		int answer = 0;
-		
+
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
 				arr[i][j] = sc.nextInt();
 			}
 		}
-		
+
 		while (true) {
 			if (arr[r][c] != -1) {
 				answer++;
@@ -29,32 +30,32 @@ class BOJ14503_imp {
 			}
 			int cnt = 0;
 			boolean isGo = true;
-			
+
 			turnLeft();
-			while(!go()) {
+			while (!go()) {
 				if (++cnt == 4) {
 					isGo = false;
 					break;
 				}
 				turnLeft();
 			}
-			
+
 			if (isGo) {
 				continue;
 			}
-			
-			if(goBack()) {
+
+			if (goBack()) {
 				continue;
 			} else {
 				break;
 			}
 
 		}
-		
+
 		System.out.println(answer);
-		
+
 	}
-	
+
 	static void turnLeft() {
 		if (d == 0) {
 			d = 3;
@@ -67,7 +68,7 @@ class BOJ14503_imp {
 		}
 	}
 
-	static boolean go () {
+	static boolean go() {
 		if (d == 0) {
 			if (arr[r - 1][c] == 0) {
 				r--;
@@ -98,8 +99,8 @@ class BOJ14503_imp {
 			}
 		}
 	}
-		
-	static boolean goBack () {
+
+	static boolean goBack() {
 		if (d == 0) {
 			if (arr[r + 1][c] != 1) {
 				r++;
