@@ -13,7 +13,7 @@ public class BOJ2812_grd {
 
 		System.out.println(solution);
 	}
-	
+
 	public static int solution(int N, int K, int num) {
 		int n = N;
 		int k = K;
@@ -36,12 +36,12 @@ public class BOJ2812_grd {
 				i++;
 			}
 		}
-		
+
 		for (int idx = n - 1; j != k; idx--) {
 			arr[idx] = "-1";
 			j++;
 		}
-		
+
 		String str = "";
 		for (int idx = 0; idx < arr.length; idx++) {
 			str += arr[idx];
