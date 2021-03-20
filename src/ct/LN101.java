@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// 다시 보기
 public class LN101 {
    public static String solution(String[] table, String[] languages, int[] preference) {
       String[] tbl = table;
