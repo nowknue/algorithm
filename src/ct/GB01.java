@@ -2,11 +2,6 @@ package ct;
 
 import java.util.Arrays;
 
-/*
-
-
- */
-// Java의 int배열은 2^31-1 개를 담을 수 없어서 효율성 다 틀림
 public class GB01 {
    static int[] index; // 동적 계획법을 위한 배열 
    public static int solution(int n) {
