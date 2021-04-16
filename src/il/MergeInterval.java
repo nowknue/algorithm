@@ -1,25 +1,24 @@
 package il;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-class Interval {
-   int start;
-   int end;
-
-   Interval() {
-      this.start = 0;
-      this.end = 0;
-   }
-
-   Interval(int s, int e) {
-      this.start = s;
-      this.end = e;
-   }
-}
+//class Interval {
+//   int start;
+//   int end;
+//
+//   Interval() {
+//      this.start = 0;
+//      this.end = 0;
+//   }
+//
+//   Interval(int s, int e) {
+//      this.start = s;
+//      this.end = e;
+//   }
+//}
 
 public class MergeInterval {
    public static void main(String[] args) {
