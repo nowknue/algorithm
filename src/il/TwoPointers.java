@@ -19,7 +19,6 @@ public class TwoPointers {
          for (int i = lt; i < rt; i++) {
             sum += i;
          }
-         System.out.println(lt + " @@ " + rt + " sum: " + sum);
          
          if (sum > n) {
             lt++;
