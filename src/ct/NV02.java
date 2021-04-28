@@ -24,7 +24,7 @@ class NV02 {
                     answer += key.charAt(keyIdx);
                     keyIdx = (keyIdx + 1) % key.length();
                     skpsIdx++;
-                    System.out.println(skpsIdx);
+                    //System.out.println(skpsIdx);
                     continue;
 
                 } else { // skps를 1씩 낮춘다.
