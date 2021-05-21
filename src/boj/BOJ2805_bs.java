@@ -25,7 +25,6 @@ public class BOJ2805_bs {
 		}
 
 		Arrays.sort(trees);
-
 		long left = 1;
 		long right = trees[trees.length - 1];
 
