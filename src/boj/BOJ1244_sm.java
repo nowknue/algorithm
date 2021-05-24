@@ -58,5 +58,7 @@ public class BOJ1244_sm {
 			if (j % 20 == 0)
 				System.out.println();
 		}
+		
+		sc.close();
 	}
 }
